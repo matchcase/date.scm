@@ -1,5 +1,6 @@
 #+TITLE:date.scm
 A simple Guile Scheme program that provides the current date with a color gradient and emoji for i3blocks.
+
 [[./date-scm.png]]
 * Usage
 Set ~dark-color~ and ~bright-color~ to colors of your choice. The closer the time is to noon, the closer the background color will be to ~bright-color~, and likewise the closer the time is to midnight, the closer it will be to ~dark-color~.
