@@ -26,7 +26,10 @@
     (+ (* (- 1 t) a) (* t b)))
   (let [(rgb-dark (hex->rgb color-dark))
         (rgb-bright (hex->rgb color-bright))
-        (t (/ (- 1 (cos (* (/ minutes 1440.0) (acos -1)))) 2))]
+        (t (/ (if (> minutes 720)
+                  (- 1440 minutes)
+                  minutes)
+              1440.0))]
     (match `(,rgb-dark ,rgb-bright)
       [((rd gd bd) (rb gb bb))
        (let [(r (interpolate rd rb t))
